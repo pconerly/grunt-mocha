@@ -58,6 +58,13 @@ var inject = function() {
   injected = true;
 };
 
+// Add options to the page.
+if (options.page) {
+  for (var prop in options.page) {
+    page[prop] = options.page[prop];
+  }
+}
+
 // Keep track if the client-side helper script already has been injected.
 page.onUrlChanged = function(newUrl) {
   injected = false;
